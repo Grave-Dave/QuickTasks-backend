@@ -19,5 +19,11 @@ services:
     App\:
         resource: '../src/'
 
+    App\Domain\Task\TaskRepository:
+        alias: App\Infrastructure\Repository\DoctrineTaskRepository
+
+    App\Domain\Task\TaskRepositoryInterface:
+        alias: App\Infrastructure\Repository\DoctrineTaskRepository
+
     # add more service definitions when explicit configuration is needed
     # please note that last definitions always *replace* previous ones
