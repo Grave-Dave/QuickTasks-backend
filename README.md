@@ -6,7 +6,7 @@ Lokalne uruchomienie z frontendem React (osobno).
 ## Wymagania
 
 - PHP 8.2+, Composer
-- **Baza: SQLite** – w `php.ini` włącz rozszerzenie: `extension=pdo_sqlite` (często włączone domyślnie)
+- **Baza: SQLite** – w `php.ini` włącz rozszerzenie: `extension=pdo_sqlite`  i `extension=sqlite3`
 - Opcjonalnie: Symfony CLI (`symfony serve`)
 
 ## Uruchomienie
@@ -15,6 +15,8 @@ Lokalne uruchomienie z frontendem React (osobno).
 
 ```bash
 composer install
+lub (w przypadku problemów)
+composer install --ignore-platform-reqs
 ```
 
 ### 2. Środowisko (.env)
@@ -27,7 +29,6 @@ W `.env` ustaw m.in.:
 
 ```env
 APP_ENV=dev
-APP_SECRET=<wygeneruj-np.-php -r "echo bin2hex(random_bytes(16));">
 
 # SQLite
 DATABASE_URL="sqlite:///%kernel.project_dir%/var/data.db"
